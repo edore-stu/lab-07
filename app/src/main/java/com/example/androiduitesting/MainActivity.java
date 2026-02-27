@@ -2,13 +2,17 @@ package com.example.androiduitesting;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -65,13 +69,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*cityList.setOnClickListener(new View.OnClickListener() {
+        cityList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String selected = ((TextView) view.findViewById(R.id.content_view)).getText() + "";
+
                 Intent intent = new Intent();
-                intent.setClass()
+                intent.setClass(MainActivity.this, ShowActivity.class);
+                intent.putExtra("City", selected);
+                startActivity(intent);
             }
         });
-    */
     }
 }
