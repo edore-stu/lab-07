@@ -64,5 +64,14 @@ public class MainActivity extends AppCompatActivity {
                 cityAdapter.clear();
             }
         });
+
+        /*cityList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass()
+            }
+        });
+    */
     }
 }
